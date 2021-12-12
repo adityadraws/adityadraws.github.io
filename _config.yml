@@ -1,0 +1,25 @@
+# Site settings
+title: the art of adityadraws
+description: little fragments of my imagination ✨
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+author: Aditya R
+
+# Collection settings
+collections:
+  photos:
+
+# Social settings
+500px_url:
+facebook_url:
+github_url:
+gitlab_url:
+googleplus_url:
+instagram_url: https://www.instagram.com/adityadraws
+linkedin_url: 
+pinterest_url:
+slack_url:
+twitter_url: https://twitter.com/adityadraws
+
+# Build settings
+markdown: kramdown
