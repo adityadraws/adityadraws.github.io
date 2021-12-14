@@ -1,4 +1,3 @@
-# the art of adityadraws
 
 ![Banner art depicting Zenitsu](/assets/images/banner.jpg)
 
