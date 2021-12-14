@@ -1,6 +1,6 @@
 # Site settings
 title: the art of adityadraws
-description: little fragments of my imagination ✨
+description: little fragments of my imagination<br>(optimized for desktop)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 author: Aditya R

@@ -1,5 +1,7 @@
+from math    import ceil
 from os      import listdir
 from os.path import isfile, join
+from PIL     import Image, ImageOps
 from shutil  import copyfile
 
 import os
@@ -16,6 +18,7 @@ thumbnail: {}
 caption: {}
 ---
 '''
+
 ROOT = DIRS['root']
 THUMB_ROOT = DIRS['thumbs']
 FULL_ROOT = DIRS['fulls']
@@ -26,17 +29,11 @@ dated_folders = os.walk(ROOT)
 
 dry_run = False
 
-im = r'C:\Users\gayat\Desktop\Instagram data backups\adityadraws_20211212\media\posts\202106\200509058_3047549632142829_5999638296946235673_n_18135034312168803.jpg'
-
 def resize(image):
-    from PIL import Image, ImageOps
-    from math import ceil
     img = Image.open(image)
-    print(img.width, img.height)
 
     # If it is not 4:3, make it 4:3 ratio first by adding borders
     # then resize to 1200:750
-
     w = img.width
     h = img.height
     new_h = h
@@ -53,8 +50,6 @@ def resize(image):
     down = ceil(vertical_border/2)
     left = ceil(horizontal_border/2)
     right = ceil(horizontal_border/2)
-    print(left, up, right, down)
-    #new_img = ImageOps.expand(img, (up, right, down, left), fill = 'black')
     new_img = ImageOps.expand(img, (left, up, right, down), fill = 'black')
     size = (1200, 800)
     new_img.save(image)
@@ -65,14 +60,6 @@ for folder in dated_folders:
 
     if path_to_folder == ROOT:
         continue
-
-    '''
-    Enter into this folder.
-    Copy every image and move it to blog's thumbnail + full
-    Create a new md post for this and add the path + title
-    Title can be date and post number
-    YYYMM#<PostNo>
-    '''
 
     images = [f for f in listdir(path_to_folder) if isfile(join(path_to_folder, f)) and (f.endswith('.jpg') or f.endswith('png') or f.endswith('jpeg'))]
     post_num = 1
@@ -109,10 +96,6 @@ for folder in dated_folders:
         
         if not dry_run:
             new_post.close()
-            
-        print('Generating with content:')
-        print(content)
         post_num += 1
-
 
 print('Success!')
