@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art of Kan Liu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Section 
+  <header>
+    <div class="logo">
+      <h1>nexusverse</h1>
+	  <br>
+	  <h3>by adityadraws</h3>
+    </div>
+  </header> -->
+  
+   <!-- Hero Section with Background Video -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>nexusverse</h1>
+      <p>a worldbuilding project by adityadraws</p>
+    </div>
+    <video class="hero-video" autoplay muted loop>
+      <source src="assets/rei_cat_vibing.mp4" type="video/mp4">
+    </video>
+	
+	 <!-- Scroll Down Button -->
+    <a class="scroll-button" onclick="smoothScroll()"><h4>↓↓↓</h4></a>
+  </section>
+
+  <!-- Main Content (Artworks) -->
+  <main id="gallery">
+    <section id="gallerysection" class="artworks">
+      <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('image','https://via.placeholder.com/600x900')">
+        <img src="https://via.placeholder.com/600x900" alt="Artwork 1">
+      </div>
+      <div class="artwork-item" style="grid-column: span 2; grid-row: span 1;" onclick="openModal('image','https://via.placeholder.com/600x400')">
+        <img src="https://via.placeholder.com/600x400" alt="Artwork 2">
+      </div>
+      <div class="artwork-item" style="grid-column: span 6; grid-row: span 3;" onclick="openModal('image','https://via.placeholder.com/1200x900')">
+        <img src="https://via.placeholder.com/1200x900" alt="Artwork 3">
+      </div>
+      <div class="artwork-item" style="grid-column: span 2; grid-row: span 2;" onclick="openModal('image','https://via.placeholder.com/600x600')">
+        <img src="https://via.placeholder.com/600x600" alt="Artwork 4">
+      </div>
+      <div class="artwork-item" style="grid-column: span 1; grid-row: span 1;" onclick="openModal('image','https://via.placeholder.com/600x400')">
+        <img src="https://via.placeholder.com/600x400" alt="Artwork 5">
+      </div>
+	  <div class="artwork-item" style="grid-column: span 1; grid-row: span 1;" onclick="openModal('video', 'https://www.w3schools.com/html/movie.mp4')">
+		<div class="video-container">
+			<video class="gallery-media" src="https://www.w3schools.com/html/movie.mp4" alt="Artwork 3" loop muted></video>
+			<div class="play-icon">▶</div>  <!-- Play Icon -->
+		</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for Media Viewing -->
+  <div id="mediaModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalMedia" class="modal-content">
+      <!-- Media will be injected here (either video, image, or iframe) -->
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 The Art of adityadraws | All Rights Reserved</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Behance</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline JavaScript -->
+  <script>
+    // Open the modal and display the clicked media (image/video/iframe)
+    function openModal(type, mediaSrc) {
+      const modalContent = document.getElementById('modalMedia');
+      console.log(`Opening modal with type: ${type} and src: ${mediaSrc}`); // Debugging log
+
+      if (type === 'video') {
+        modalContent.innerHTML = `<video controls autoplay class="modal-video"><source src="${mediaSrc}" type="video/mp4"></video>`;
+      } else if (type === 'iframe') {
+        modalContent.innerHTML = `<iframe class="modal-content" src="${mediaSrc}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      } else if (type === 'image') {
+        modalContent.innerHTML = `<img src="${mediaSrc}" class="modal-content" />`;
+      }
+      
+      // Display the modal
+      document.getElementById('mediaModal').style.display = 'flex';
+    }
+
+    // Close the modal
+    function closeModal() {
+      // Hide the modal and clear content
+      document.getElementById('mediaModal').style.display = 'none';
+      document.getElementById('modalMedia').innerHTML = ''; // Clear the modal content
+    }
+	
+	// Smooth scroll to the gallery section
+  function smoothScroll() {
+    document.querySelector('#gallery').scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+  
+    // Close the modal when clicking outside the modal content
+	document.getElementById('mediaModal').addEventListener('click', function(event) {
+	  if (event.target === this) {
+		closeModal();
+	  }
+	});
+	
+  </script>
+
+
+
+</body>
+</html>
