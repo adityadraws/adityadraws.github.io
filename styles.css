@@ -70,6 +70,60 @@ main {
   }
 }
 
+.image-container img {
+  object-position: center center; /* Center by default on mobile */
+}
+
+/* Specific object-position for desktop images */
+@media (min-width: 600px) {
+  .image-position-0 {
+    object-position: center 0%;
+  }
+
+  .image-position-10 {
+    object-position: center 10%;
+  }
+
+  .image-position-15 {
+    object-position: center 15%;
+  }
+
+  .image-position-20 {
+    object-position: center 20%;
+  }
+
+  .image-position-30 {
+    object-position: center 30%;
+  }
+
+  .image-position-40 {
+    object-position: center 40%;
+  }
+
+  .image-position-50 {
+    object-position: center 50%;
+  }
+
+  .image-position-60 {
+    object-position: center 60%;
+  }
+
+  .image-position-70 {
+    object-position: center 70%;
+  }
+
+  .image-position-80 {
+    object-position: center 80%;
+  }
+
+  .image-position-90 {
+    object-position: center 90%;
+  }
+
+  .image-position-100 {
+    object-position: center 100%;
+  }
+}
 
 /* Modal Styles */
 .modal {

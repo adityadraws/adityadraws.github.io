@@ -22,8 +22,9 @@ For an image:
 You can compress thumbnails using Magick - an open source image editing CLI
 
 ```
-magick.exe kai.PNG -resize 90% kai_thumb.jpg
+magick.exe kai.PNG -resize 90% kai.jpg
 ```
+The naming convention is that jpgs are used for thumbnails while pngs are used for modal view.
 
 Magick: https://imagemagick.org/script/download.php
 Magick CLI wiki: https://imagemagick.org/script/magick.php
