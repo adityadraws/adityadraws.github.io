@@ -36,31 +36,41 @@
     <section id="gallerysection" class="artworks">
       
       <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('image','assets/images/kai.PNG')">
-        <img src="assets/images/kai.PNG">
+        <img src="assets/images/kai_thumb.jpg" loading="lazy">
       </div>
       
       <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('image','assets/images/rei.PNG')">
-        <img src="assets/images/rei.PNG">
+        <img src="assets/images/rei_thumb.jpg" loading="lazy">
       </div>
       
       <div class="artwork-item" style="grid-column: span 4; grid-row: span 1;" onclick="openModal('image','assets/images/ignis_scenery.PNG')">
-        <img src="assets/images/ignis_scenery.PNG" alt="Artwork 3" style="object-position: center 100%;">
+        <img src="assets/images/ignis_scenery_thumb.jpg" style="object-position: center 100%;" loading="lazy">
       </div>
       
       <div class="artwork-item" style="grid-column: span 2; grid-row: span 1;" onclick="openModal('video', 'assets/images/hunter_ship_v1.mkv')">
         <div class="video-container">
-          <video class="gallery-media" src="assets/images/hunter_ship_v1.mkv" alt="Artwork 3" loop muted></video>
+          <video class="gallery-media" src="assets/images/hunter_ship_v1.mkv" alt="Artwork 3"></video>
+          <div class="play-icon">▶</div>  <!-- Play Icon -->
+        </div>
+      </div>
+
+      <div class="artwork-item" style="grid-column: span 3; grid-row: span 1;" onclick="openModal('video', 'assets/images/rei_gasp_compressed.mp4')">
+        <div class="video-container">
+          <video class="gallery-media" src="assets/images/rei_gasp_compressed.mp4" style="object-position: center 15%"></video>
           <div class="play-icon">▶</div>  <!-- Play Icon -->
         </div>
       </div>
 
       <div class="artwork-item" style="grid-column: span 3; grid-row: span 3;" onclick="openModal('image','assets/images/rei_firebreath.PNG')">
-        <img src="assets/images/rei_firebreath.PNG" alt="Artwork 4">
+        <img src="assets/images/rei_firebreath_thumb.jpg" loading="lazy">
       </div>
 
-      <div class="artwork-item" style="grid-column: span 2; grid-row: span 2;" onclick="openModal('image','assets/images/ignis_princess.PNG')">
-        <img src="assets/images/ignis_princess.PNG" alt="Artwork 5" style="object-position: center 50%">
+      <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('image','assets/images/ignis_princess.PNG')">
+        <img src="assets/images/ignis_princess_thumb.jpg" alt="Artwork 5" style="object-position: center 50%" loading="lazy">
       </div>
+
+      
+
   	  
     </section>
   </main>
@@ -78,8 +88,7 @@
     <div class="footer-content">
       <p>&copy; 2024 The Art of adityadraws | All Rights Reserved</p>
       <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">Behance</a>
+        <a href="https://instagram.com/adityadraws">Instagram</a>
       </div>
     </div>
   </footer>
@@ -89,11 +98,14 @@
 
     // Ensure videos autoplay, loop, and are muted on page load
     document.addEventListener('DOMContentLoaded', function () {
-      const videos = document.querySelectorAll('.gallery-media');
-      videos.forEach(function(video) {
-        video.autoplay = true;
-        video.loop = true;
-        video.muted = true;
+      const myVideos = document.querySelectorAll('.gallery-media');
+      myVideos.forEach(function(curvideo) {
+        curvideo.autoplay = true;
+        curvideo.loop = true;
+        curvideo.muted = true;
+
+        // Ensure the video is fully loaded before applying autoplay
+        curvideo.load();  // This can help in some cases if the video is cached incorrectly
       });
     });
 

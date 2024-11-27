@@ -27,13 +27,13 @@ header .logo h1 {
 
 /* Main Section */
 main {
-  padding: 40px 1%;
+  padding: 40px 0.3%;
 }
 
 .artworks {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* Default: 6 columns */
-  gap: 20px;
+  gap: 4px;
   grid-auto-rows: 200px; /* Set uniform height for items */
 }
 
@@ -142,27 +142,6 @@ footer .socials a {
 footer .socials a:hover {
   text-decoration: underline;
 }
-
-/* Responsive Design 
-@media (max-width: 768px) {
-  main {
-    padding: 40px 5%;
-  }
-
-  header .logo h1 {
-    font-size: 2rem;
-  }
-
-  .artworks {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .artworks {
-    grid-template-columns: 1fr;
-  }
-} /*
 
 /* General video container styles */
 .video-container {
