@@ -41,7 +41,7 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background-color: #eee;
+  background-color: #222;
   cursor: pointer;
 }
 
