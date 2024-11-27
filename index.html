@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>adityadraws</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -32,7 +33,7 @@
   </section>
 
   <!-- Main Content (Artworks) -->
-  <main id="gallery">
+  <main id="gallery" style="background-color: #222;">
     <section id="gallerysection" class="artworks">
       
       <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('image','assets/images/kai.PNG')">
@@ -54,7 +55,7 @@
         </div>
       </div>
 
-      <div class="artwork-item" style="grid-column: span 3; grid-row: span 1;" onclick="openModal('video', 'assets/images/rei_gasp_compressed.mp4')">
+      <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('video', 'assets/images/rei_gasp_compressed.mp4')">
         <div class="video-container">
           <video class="gallery-media" src="assets/images/rei_gasp_compressed.mp4" style="object-position: center 15%"></video>
           <div class="play-icon">▶</div>  <!-- Play Icon -->
@@ -66,9 +67,24 @@
       </div>
 
       <div class="artwork-item" style="grid-column: span 3; grid-row: span 2;" onclick="openModal('image','assets/images/ignis_princess.PNG')">
-        <img src="assets/images/ignis_princess_thumb.jpg" alt="Artwork 5" style="object-position: center 50%" loading="lazy">
+        <img src="assets/images/ignis_princess_thumb.jpg" style="object-position: center 50%" loading="lazy">
       </div>
 
+      <div class="artwork-item" style="grid-column: span 3; grid-row: span 1;" onclick="openModal('image','assets/images/outfits.png')">
+        <img src="assets/images/outfits_thumb.jpg" style="object-position: center 0%" loading="lazy">
+      </div>
+
+      <div class="artwork-item" style="grid-column: span 2; grid-row: span 1;" onclick="openModal('image','assets/images/loadout_station.png')">
+        <img src="assets/images/loadout_station.jpg" loading="lazy">
+      </div>
+
+      <div class="artwork-item" style="grid-column: span 4; grid-row: span 2;" onclick="openModal('image','assets/images/arex.png')">
+        <img src="assets/images/arex.jpg" loading="lazy">
+      </div>
+
+      <div class="artwork-item" style="grid-column: span 2; grid-row: span 1;" onclick="openModal('image','assets/images/rio.png')">
+        <img src="assets/images/rio.jpg" loading="lazy">
+      </div>
       
 
   	  
@@ -86,9 +102,9 @@
   <!-- Footer Section -->
   <footer>
     <div class="footer-content">
-      <p>&copy; 2024 The Art of adityadraws | All Rights Reserved</p>
+      <p>&copy; the art of adityadraws | all rights reserved</p>
       <div class="socials">
-        <a href="https://instagram.com/adityadraws">Instagram</a>
+        <a href="https://instagram.com/adityadraws" target="_blank"><i class="fa fa-instagram" style="font-size:36px"></i></a>
       </div>
     </div>
   </footer>
